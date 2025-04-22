@@ -1,11 +1,18 @@
-pipeline{
-    agent any{
-        stage('Build'){
-            echo "building pipeline"
-            sh 'cat file.txt'
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "building pipeline"
+                sh 'cat file.txt'
+            }
         }
-        stage('Done'){
-            echo "build done"
+
+        stage('Done') {
+            steps {
+                echo "build done"
+            }
         }
     }
 }
